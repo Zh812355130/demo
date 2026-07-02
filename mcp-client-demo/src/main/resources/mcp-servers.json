@@ -1,0 +1,30 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx.cmd",
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    },
+    "amap-maps": {
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@amap/amap-maps-mcp-server"
+      ],
+      "env": {
+        "AMAP_MAPS_API_KEY": "you-key"
+      }
+    }
+  },
+  "_disabled": {
+    "redis-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "--from", "redis-mcp-server@latest",
+        "redis-mcp-server",
+        "--url", "redis://localhost:6379/0"
+      ]
+    }
+  }
+}

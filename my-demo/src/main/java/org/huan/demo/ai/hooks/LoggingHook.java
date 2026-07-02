@@ -1,0 +1,34 @@
+package org.huan.demo.ai.hooks;
+
+import com.alibaba.cloud.ai.graph.OverAllState;
+import com.alibaba.cloud.ai.graph.RunnableConfig;
+import com.alibaba.cloud.ai.graph.agent.hook.AgentHook;
+import com.alibaba.cloud.ai.graph.agent.hook.HookPosition;
+import com.alibaba.cloud.ai.graph.agent.hook.HookPositions;
+
+import java.util.Map;
+import java.util.concurrent.CompletableFuture;
+
+@HookPositions({HookPosition.BEFORE_AGENT,HookPosition.AFTER_AGENT})
+public class LoggingHook extends AgentHook {
+
+    @Override
+    public CompletableFuture<Map<String, Object>> beforeAgent(OverAllState state, RunnableConfig config) {
+        System.out.println("Agent 开始执行");
+        return super.beforeAgent(state, config);
+    }
+
+    @Override
+    public CompletableFuture<Map<String, Object>> afterAgent(OverAllState state, RunnableConfig config) {
+        System.out.println("Agent 执行完成");
+        return super.afterAgent(state, config);
+    }
+
+    @Override
+    public String getName() {
+        return "LoggingHook";
+    }
+
+}
+
+

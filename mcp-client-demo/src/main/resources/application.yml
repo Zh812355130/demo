@@ -1,0 +1,28 @@
+server:
+  port: 9001
+
+spring:
+  ai:
+    dashscope:
+      api-key: you-key
+      chat:
+        options:
+          model: qwen-max
+    mcp:
+      client:
+        enabled: true
+        version: 1.0.0
+        name: spring-ai-mcp-client
+        request-timeout: 30s
+        toolcallback:
+          enabled: true
+#        stdio:
+#          servers-configuration: classpath:mcp-servers.json
+#        sse:
+#          connections:
+#            server1:
+#              url: http://localhost:9002
+logging:
+  level:
+    org.springframework.ai: debug
+    io.modelcontextprotocol: debug

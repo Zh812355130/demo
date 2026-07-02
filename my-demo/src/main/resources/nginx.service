@@ -1,0 +1,13 @@
+[Unit]
+Description=nginx
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/home/nginx/sbin/nginx
+ExecReload=/home/nginx/sbin/nginx -s reload
+ExecStop=/home/nginx/sbin/nginx -s quit
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

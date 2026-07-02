@@ -1,0 +1,11 @@
+server:
+  port: 9002
+
+spring:
+  ai:
+    mcp:
+      server:
+        enabled: true
+        name: spring-ai-mcp-server
+        version: 1.0.0
+        type: async
