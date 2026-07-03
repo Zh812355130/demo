@@ -254,11 +254,11 @@ public class ZjExcelHandler {
     }
 
     public static void main(String[] args) throws IOException {
-        String path = "D:\\个人\\temp\\2026.05月设备工时统计表-简版.xlsx";
-        ZjExcelHandler zjExcelHandler = new ZjExcelHandler(path, 5, 2);
-        zjExcelHandler.addHolidays(1,2,3,4,5);
-        zjExcelHandler.removeHolidays(9);
-        zjExcelHandler.handle("D:\\个人\\temp\\2026.05月设备工时统计表-简版-生成.xlsx");
+        String path = "D:\\个人\\temp\\2026.06月设备工时统计表-简版.xlsx";
+        ZjExcelHandler zjExcelHandler = new ZjExcelHandler(path, 6, 2);
+        zjExcelHandler.addHolidays(19);
+//        zjExcelHandler.removeHolidays(9);
+        zjExcelHandler.handle("D:\\个人\\temp\\2026.06月设备工时统计表-简版-生成.xlsx");
     }
 
 }
